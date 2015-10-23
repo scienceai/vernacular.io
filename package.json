@@ -1,0 +1,24 @@
+{
+  "name": "vernacular.io",
+  "private": true,
+  "version": "0.0.1",
+  "description": "HTML Made Special",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scienceai/vernacular.io.git"
+  },
+  "keywords": [
+    "HTML",
+    "vernacular"
+  ],
+  "author": "Robin Berjon <robin@standardanalytics.io>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/scienceai/vernacular.io/issues"
+  },
+  "homepage": "http://vernacular.io/",
+  "dependencies": {
+    "normalize.css": "3.0.3"
+  }
+}
