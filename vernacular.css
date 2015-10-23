@@ -1,6 +1,44 @@
 
 @import url('node_modules/normalize.css/normalize.css');
 
+/* Fonts: Merriweather */
+@font-face {
+    font-family: "Merriweather";
+    src: url("fonts/merriweather-light-webfont.eot");
+    src: url("fonts/merriweather-light-webfont.eot?#iefix") format("embedded-opentype"),
+         url("fonts/merriweather-light-webfont.woff") format("woff"),
+         url("fonts/merriweather-light-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Merriweather";
+    src: url("fonts/merriweather-bold-webfont.eot");
+    src: url("fonts/merriweather-bold-webfont.eot?#iefix") format("embedded-opentype"),
+         url("fonts/merriweather-bold-webfont.woff") format("woff"),
+         url("fonts/merriweather-bold-webfont.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Merriweather";
+    src: url("fonts/merriweather-bolditalic-webfont.eot");
+    src: url("fonts/merriweather-bolditalic-webfont.eot?#iefix") format("embedded-opentype"),
+         url("fonts/merriweather-bolditalic-webfont.woff") format("woff"),
+         url("fonts/merriweather-bolditalic-webfont.ttf") format("truetype");
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Merriweather";
+    src: url("fonts/merriweather-lightitalic-webfont.eot");
+    src: url("fonts/merriweather-lightitalic-webfont.eot?#iefix") format("embedded-opentype"),
+         url("fonts/merriweather-lightitalic-webfont.woff") format("woff"),
+         url("fonts/merriweather-lightitalic-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,7 +46,8 @@ body {
   background: #eee5de;
 }
 header {
-  background: #40673f;
+  /*background: #40673f;*/
+  background: #49B2AC;
   border-top: 10px solid #cc4500;
 }
 header h1 {
@@ -23,7 +62,8 @@ header h1 {
 header p.subtitle {
   /*color: #7FCC7D;*/
   /*color: #f73;*/
-  color: #eee5de;
+  /*color: #eee5de;*/
+  color: yellow;
   text-align: center;
   font-size: 26px;
   padding-bottom: 120px;
@@ -66,7 +106,6 @@ nav a {
   font-weight: 800;
   text-transform: uppercase;
   color: #fffdfa;
-  /*text-shadow: 1px 1px 0px #142013;*/
   text-shadow: 1px 1px 0px #7a5f52;
   text-decoration: none;
   font-size: 20px;
@@ -92,4 +131,10 @@ section h2 {
 section:target h2 {
   color: #cc4500;
 }
-/*:target*/
+section p {
+  font-family: Merriweather, serif;
+  line-height: 1.6;
+}
+dfn {
+  font-weight: bold;
+}
