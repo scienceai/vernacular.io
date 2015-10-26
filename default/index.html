@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <p class='title'>Vernacular</p>
+      <p class="title">Vernacular</p>
       <p class="subtitle">
         HTML Made Special
       </p>
@@ -19,7 +19,43 @@
     </nav>
     <article>
       <h1>Default Values</h1>
-
+      <p>
+        Default values are commonly considered when creating APIs but too often forgotten when
+        designing declarative formats, making them harder to use than necessary. Additionally,
+        an important distinction often prevails in markup: whereas a method receiving an invalid
+        argument will commonly produce an error, in markup it is often preferable to treat it as if
+        it had been unspecified. This can lead to better decoupling between document and processor
+        versions.
+      </p>
+      <p>
+        Not specifying how to default values will hurt error processing (and its cousin versioning),
+        and lead to interoperability issues.
+      </p>
+      <p>
+        Imagine for instance that an author specifies the colour of an item to be <code>#99</code>
+        instead of the intended <code>#999</code> because of a typo. The processor can interpret
+        that in several ways:
+      </p>
+      <ul>
+        <li>Decide it’s too big an error, and melt the motherboard.</li>
+        <li>Realise it’s wrong, and pick a default colour of its choosing (often black, but could be
+            fuchsia).</li>
+        <li>Pad with the last character, making it <code>#999</code>, with 0 (<code>#990</code>), or
+            with something else that seemed to make sense while the implementer was rushing to
+            finish so that she could go have a beer with the rest of her team.</li>
+        <li>Throw it away, and apply a colour inherited from the same attribute higher in the tree.
+            </li>
+        <li>Throw it away, and consider it null (transparent).</li>
+        <li>Take the inherited colour, and only change the red and green components.</li>
+      </ul>
+      <p>
+        Most of the above will produce different colours. And since they’ll produce different
+        results in different implementations, there will be no interoperability. Which solution
+        works best depends a lot on the usage scenario for the vernacular, you have to make your own
+        mind up there. Note however that unless you are certain that there is a user at the helm to
+        handle the error or you are encoding critical information such as steps in robotic surgery,
+        it is unlikely that halting and catching fire is the best option.
+      </p>
       <p class="back">
         <a href="../index.html#how">↖︎ Back to list</a>
       </p>

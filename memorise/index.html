@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <p class='title'>Vernacular</p>
+      <p class="title">Vernacular</p>
       <p class="subtitle">
         HTML Made Special
       </p>
@@ -19,7 +19,61 @@
     </nav>
     <article>
       <h1>Hard to Memorise URLs</h1>
-
+      <p>
+        This applies mostly in case you’re defining a vocabulary for use with RDFa/Microdata.
+      </p>
+      <p>
+        Good language design should make it harder for people to make mistakes. One of the
+        most basic part of that is using regular, easy to remember identifiers so as to
+        avoid typos.
+      </p>
+      <p>
+        With that in mind, something in the following non-exhaustive list should strike one
+        as wrong:
+      </p>
+      <ul>
+        <li>http://www.w3.org/1999/xlink</li>
+        <li>http://www.w3.org/2000/svg</li>
+        <li>http://www.w3.org/1999/xhtml</li>
+        <li>http://www.w3.org/2002/xforms</li>
+        <li>http://www.w3.org/2001/xml-events</li>
+        <li>http://www.w3.org/1999/02/22-rdf-syntax-ns#</li>
+        <li>http://www.w3.org/2000/01/rdf-schema#</li>
+        <li>http://www.w3.org/2002/07/owl#</li>
+        <li>http://www.w3.org/2001/XMLSchema</li>
+        <li>http://www.w3.org/2001/XMLSchema-instance</li>
+        <li>http://www.w3.org/1998/Math/MathML</li>
+        <li>http://www.w3.org/1999/XSL/Transform</li>
+        <li>http://www.w3.org/1999/XSL/Format</li>
+        <li>http://www.w3.org/2003/05/soap-encoding</li>
+        <li>http://www.w3.org/2003/05/soap-envelope</li>
+        <li>http://www.w3.org/2003/06/wsdl</li>
+      </ul>
+      <p>
+        The W3C used to be an easy target in this area (they later switched to a better naming
+        scheme, but most namespaces were minted before that), but they are by no means alone:
+      </p>
+      <ul>
+        <li>http://schemas.microsoft.com/winfx/2006/xaml/presentation</li>
+        <li>http://schemas.microsoft.com/client/2007</li>
+        <li>http://schemas.microsoft.com/office/word/2003/wordml</li>
+        <li>and many, many more…</li>
+      </ul>
+      <p>
+        By contrast, consider the case of <a href="http://schema.org/">schema.org</a> which is
+        called “schema.org”, resides at <a href="http://schema.org/">http://schema.org/</a>, and
+        uses <code>http://schema.org/</code> as the prefix for all of its types and properties.
+        Granted, you still might hesitate between <code>http</code> and <code>https</code>, but
+        overall you’re on pretty safe grounds where mnemonics are concerned.
+      </p>
+      <p>
+        There are arguments in favour of impossible to remember URLs, but
+        as anyone who’s had to produce an XSLT style sheet outputting XHTML, SVG,
+        XLink, XML Events, and MathML can attest these arguments are not grounded in
+        pragmatic reality. They are too easy to get wrong, and
+        — in part due to broken tools — lead to bugs that are sometimes difficult for
+        users to uncover.
+      </p>
       <p class="back">
         <a href="../index.html#how">↖︎ Back to list</a>
       </p>

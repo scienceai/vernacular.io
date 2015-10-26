@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <p class='title'>Vernacular</p>
+      <p class="title">Vernacular</p>
       <p class="subtitle">
         HTML Made Special
       </p>
@@ -19,7 +19,64 @@
     </nav>
     <article>
       <h1>Inconsistency</h1>
-
+      <p>
+        There are many ways of being inconsistent. They will all tend to hurt your users in
+        different ways.
+      </p>
+      <p>
+        Inconsistent naming will make it hard to remember which is what, and will cause subtle bugs
+        when processing software looks for the wrong information. This is one of the simplest to get
+        right and yet is often wrong as the result of things being specified on the fly and not
+        revisited later. The typical example is SVG having <code>circle</code>, <code>path</code>,
+        <code>ellipse</code>, etc. but <code>rect</code> instead of <code>rectangle</code>. It does
+        make a language harder to learn.
+      </p>
+      <p>
+        Incoherent features are harder to spot because they tend to happen when people use your
+        ideas in unexpected ways.
+      </p>
+      <p>
+        A good example is the different treatment applied to shapes and animations in SVG. The
+        following will work and display a second rectangle inside the <code>g</code>.
+      </p>
+      <pre>
+&lt;svg ...
+  &lt;defs>
+    &lt;rect ...="" id="dahut">&lt;/rect>
+  &lt;/defs>
+  &lt;g>
+    &lt;rect x="10" y="42" ...="">&lt;/rect>
+    &lt;use xlink:href="#dahut">&lt;/use>
+  &lt;/g>
+&lt;/svg>
+      </pre>
+      <p>
+        But the following, while valid, will not cause the <code>g</code> element to be animated:
+      </p>
+      <pre>
+&lt;svg ...
+  &lt;defs>
+    &lt;animatetransform ...="" id="dahut-anim">&lt;/animatetransform>&lt;
+  /defs>
+  &lt;g>
+    &lt;rect x="10" y="42" ...="">&lt;/rect>
+    &lt;use xlink:href="#dahut-anim">&lt;/use>
+  &lt;/g>
+&lt;/svg>
+      </pre>
+      <p>
+        Instead the <code>defs</code> will be animated, which will do nothing. This sort of
+        discrepancy confuses authors, many of whom will try the latter at some point. There is no
+        silver bullet to get rid of such issues; the best you can do is that, whenever you add a
+        new construct to your vernacular, either constrain it to places where you can ascertain its
+        behaviour, or, if it is meant to be used in arbitrary locations try to go through the
+        entire rest of your language and to imagine how it would interact with each construct.
+      </p>
+      <p>
+        Note that while this is most easily exemplified with behavioural features, it applies just
+        as well to semantic ones. The many ways in which one can create bogus, meaningless data will
+        often boggle the developer’s mind.
+      </p>
       <p class="back">
         <a href="../index.html#how">↖︎ Back to list</a>
       </p>
