@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <p class='title'>Vernacular</p>
+      <p class="title">Vernacular</p>
       <p class="subtitle">
         HTML Made Special
       </p>
@@ -19,7 +19,51 @@
     </nav>
     <article>
       <h1>Don’t Dump Your Data Model</h1>
-
+      <p>
+        You have a nice internal data model. It is subtle, it is detailed. It may be verbose, but at
+        least it’s unambiguous. It can be tempting to devise a short algorithm that automatically
+        converts it to HTML, say using <code>class</code> to capture the class and some long-named
+        <code>data-*</code> to encode data fields, all hanging from a deep pile of
+        <code>div</code>s, and then call that a vernacular.
+      </p>
+      <p>
+        Don’t. If that is actually what you want to do, why bother using HTML at all? JSON will work
+        perfectly well for that use case, don’t go to an HTML vernacular just because it’s what
+        smart, funny, good-looking people are doing.
+      </p>
+      <p>
+        XAML is a very obvious example of such a language that was designed for cyborgs then shown
+        to humans, but unfortunately it is such a verbose language that there would be no room here
+        for an example of just how mind-boggling it can be. A quick display of one of its bizarre
+        traits should suffice. Here is some very simple XAML:
+      </p>
+      <pre>
+&lt;Canvas x:Name="Foo" Height="300" Width="500" Background="White"
+      xmlns="http://schemas.microsoft.com/client/2007"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"-->
+&lt;rectangle width="200" height="100" canvas.top="20" canvas.left="100" stroke="Black" strokethickness="3">
+  &lt;rectangle.fill>
+    &lt;imagebrush bitmapsource="C:\dahut.bmp"/>
+  &lt;/rectangle.fill>
+&lt;/rectangle>
+&lt;/Canvas>
+      </pre>
+      <p>
+        The above shows two things: compound properties (the <code>Rectangle.Fill</code> that is a
+        child element acting as if it were an attribute of its parent but with extra structure), and
+        attached properties (attributes on an element that actually "talk" to its parent, in this
+        case <code>Canvas.Top</code> and <code>Canvas.Left</code>). There is no doubt that there is
+        a logical model behind this approach, but it belongs to the implementation that supports it.
+        Instead, it is making things complex for the user. Indeed, how am I to know that the
+        position of a rectangle is a property of its container, and not something intrinsic to it?
+        Likewise, why is the fill of a rectangle a property with the name
+        <code>Rectangle.Fill</code> even though it contains a complete image, should the rectangle
+        itself be a property of the canvas and be called <code>Canvas.Rectangle</code>? The only
+        answer that comes to mind is “Come with me if you want to live”.
+      </p>
+      <p>
+        Now imagine the above all done in <code>data-*</code> attributes…
+      </p>
       <p class="back">
         <a href="../index.html#how">↖︎ Back to list</a>
       </p>

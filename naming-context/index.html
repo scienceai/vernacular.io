@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <p class='title'>Vernacular</p>
+      <p class="title">Vernacular</p>
       <p class="subtitle">
         HTML Made Special
       </p>
@@ -19,7 +19,30 @@
     </nav>
     <article>
       <h1>Naming Without Context</h1>
-
+      <p>
+        One of the great things about trees is that they provide natural context for content. And
+        when people edit content inside a tree, they are aware of that context. That is the reason
+        why an author will know that in SVG a <code>title</code> element inside a
+        <code>circle</code> element will be the title for that circle, and not for the entire
+        document.
+      </p>
+      <p>
+        Failing to use context in naming elements or attributes entails a loss in language fluidity.
+        Some vocabularies that have strong roots in SGML have an excuse for this approach since DTDs
+        named elements globally. This is visible in DocBook for instance: it feels daft to call
+        every item in a list a <code>listitem</code> since it appears as the child of one of
+        DocBook’s many list elements, but that was necessary in those days from before broadcast
+        radio and widespread tap water.
+      </p>
+      <p>
+        More recent languages have no such excuse. For instance SVG has a long list of elements
+        beginning with "fe": <code>feDistantLight</code>, <code>feSpotLight</code>,
+        <code>feColorMatrix</code>, <code>feConvolveMatrix</code>, <code>feGaussianBlur</code>,
+        <code>feTurbulence</code>... That "fe" is meant to signify "filter effect". But the fact is
+        that these elements can only appear as children of the <code>filter</code> element — they
+        are always going to be in a filter effect defining context. The prefix just makes them more
+        clumsy, as if all SVG elements began with "svg".
+      </p>
       <p class="back">
         <a href="../index.html#how">↖︎ Back to list</a>
       </p>
