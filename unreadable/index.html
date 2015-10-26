@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Unreadable Names | Vernacular</title>
+    <link rel="stylesheet" href="../vernacular.css">
+  </head>
+  <body class="subpage">
+    <header>
+      <p class="title">Vernacular</p>
+      <p class="subtitle">
+        HTML Made Special
+      </p>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="../index.html#how">Top</a></li>
+      </ul>
+    </nav>
+    <article>
+      <h1>Unreadable Names</h1>
+      <p>
+        Languages will vary in how directly humans need to be involved in their creation. Some will
+        be mostly handcrafted with love in a text editor while others will be mostly dished out by
+        the dozen by unfeeling export scripts or will typically see the user shielded from the
+        markup behind an authoring interface.
+      </p>
+      <p>
+        Where you expect to fall on this spectrum will guide your decisions in terms of how much
+        care to put into making your vernacular easy to author with no specific tooling. But even if
+        you are in the business of documenting procedural regulations for the coming Robot Hive
+        Apocalypse (in which case, “All Hail the Queen!”) you should consider the humans involved in
+        the system beyond your typical user. Some people will have to look at the source in order to
+        debug issues. Others will have to understand the source format in order to implement support
+        for it. In general, even when humans are not expected to directly produce or consume your
+        format, the more readable it is the higher quality software will accompany it — because it
+        will be simpler to code to.
+      </p>
+      <p>
+        There are two primary ways in which one can make names hard to read (be it for elements,
+        attributes, class names, properties — it doesn’t matter what language bit it is you’re
+        naming).
+      </p>
+      <p>
+        The first is to make them too short when they are not common elements. It is a good idea
+        for instance to use <code>p</code> for paragraphs as it is an extremely common element,
+        but it is more dubious to use <code>s</code>. Is that going to be for strike-through or
+        sup text? Was it superseded content? Should it have been kept for <code>span</code>?
+      </p>
+      <p>
+        The other is compound names. Those can be difficult to read for native speakers of the
+        language from which the names come from (typically, English) even though one has a natural
+        feel for word boundaries; they often become hell for people who do not know the language
+        well. The most common offender in this category is DocBook (I believe largely for historical
+        reasons, and then for consistency). To wit: <code>personblurb</code>,
+        <code>personname</code>, <code>audioobject</code>, <code>imageobjectco</code>,
+        <code>inlinemediaobject</code>, <code>qandadiv</code>, <code>classsynopsisinfo</code>,
+        <code>citebiblioid</code>, <code>simplemsgentry</code>… the <code>itemizedlist</code> goes
+        on.
+      </p>
+      <p class="back">
+        <a href="../index.html#how">↖︎ Back to list</a>
+      </p>
+    </article>
+    <footer>
+      <p>
+        <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>
+        <a href="https://twitter.com/sciencedotai">@sciencedotai</a>
+        •
+        Contributors:
+        <a href="https://twitter.com/robinberjon">@robinberjon</a>
+        •
+        Brought to you by the
+        <img src="../sciencedotai.svg" alt="science.ai logo" height="20px">
+        League of JStice
+      </p>
+    </footer>
+  </body>
+</html>
