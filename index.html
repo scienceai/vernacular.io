@@ -8,7 +8,7 @@
   <body>
     <header>
       <h1>Vernacular</h1>
-      <p class='subtitle'>
+      <p class="subtitle">
         HTML Made Special
       </p>
     </header>
@@ -21,7 +21,7 @@
         <li><a href="#huh">Huh?</a></li>
       </ul>
     </nav>
-    <section id='what'>
+    <section id="what">
       <h2>What is Vernacular HTML?</h2>
       <p>
         HTML is one of the most widespread and interoperable data formats available. It is extremely
@@ -50,35 +50,177 @@
         directly published on the Web, their content tends to be less discoverable.
       </p>
       <p>
-        “<dfn id='vernacular-html'>Vernacular HTML</dfn>” is the growing practice of creating
+        “<dfn id="vernacular-html">Vernacular HTML</dfn>” is the growing practice of creating
         domain-specific data formats using the HTML platform. Its goal is to enable interoperable,
-        specialised data interchange while retaining as much of HTML's full power as is sensible
-        for the given domain. It is not a technology so much as a body of good practices.
+        specialised data interchange while retaining as much of HTML’s full power as is sensible
+        for the given domain. It is not a technology so much as an incipient body of good practices.
       </p>
       <!--
-        - example with recipes
+        - example?
       -->
     </section>
-    <section id='why'>
+    <section id="why">
       <h2>Why bother talking about Vernacular HTML?</h2>
       <p>
-        having common references, best practices, codigying the space, some things are specific to
-        this process
+        Bodies of good practices are suspicious things. Why not <em>do and advocate through
+        example</em> rather than talk about doing? In some cases, though, it is worth sitting down and
+        writing up a few tips and tricks acquired through experience that might not be immediately
+        obvious from just looking at what others are doing.
+      </p>
+      <p>
+        HTML already has several extensibility mechanisms, ranging from well-known ones such as
+        <code>class</code> and <code>data-*</code> to less obvious parts like <code>rel</code>. It
+        also has (sadly, several) ways of overlaying additional semantics atop its markup:
+        <a href="https://html.spec.whatwg.org/multipage/microdata.html#microdata">Microdata</a>,
+        <a href="http://www.w3.org/TR/rdfa-primer/">RDFa</a>, and <a
+        href="http://microformats.org/">Microformats</a>. Its elements and attributes can at times
+        have non-obvious meanings, a fact made worse by the occasionally cryptic language in which
+        they are described in the specification. Additionally, HTML’s processing rules make it
+        possible to mint your own elements and attributes and expect a reliable DOM to come out at
+        the other end. With all of these options it is no surprise that people could find creating
+        their own vernacular daunting.
+      </p>
+      <p>
+        The HTML specification does contain some notes about how to use this or that extensibility
+        feature, but it is worth noting that standard authors can at times suffer from
+        self-important notions of right and wrong. Not that their advice should be ignored
+        wholesale, but it needs to be appraised through the sieve of your detailed knowledge of the
+        specific problem you are solving.
+      </p>
+      <p>
+        Our approach here is of a decidedly pragmatic bent. We simply wish to exchange good ideas
+        and good examples; never-ending debates about the significance of semantic meaning are very
+        much out of scope.
       </p>
     </section>
-    <section id='how'>
+    <section id="how">
       <h2>How do I build a Vernacular?</h2>
       <p>
-
+        Much of the time, if you sit down and start typing out examples, you will quickly get a good
+        feel for the kind of markup you want for your specific use case. Modulo some syntactical
+        variation, the overall shape of it is likely to be obvious. What may not be so obvious are
+        the bits that can trip you farther down the line. As a result, many of the practices listed
+        here are actually <em>bad practices</em>, thing you should <em>probably not</em> be doing.
+        I say “probably” because the philosophy at play here is that, ultimately, you know what
+        you’re doing (if not, no amount of advice will save you). You should have no qualms about
+        ignoring a red flag found here; all we’re saying is that it is likely a good idea to think
+        about it.
       </p>
+      <p>
+        The guidelines below commonly make use of examples drawn from XML vocabularies. That is
+        because the problems one is likely to encounter in the creation XML and HTML languages have
+        a fair amount of overlap, and the XML examples tend to be more outrageously wrong. Don’t let
+        that lead you to thinking that using HTML makes you safe from such mistakes — if the problem
+        is listed here, someone smart has hit that problem before.
+      </p>
+      <dl>
+        <dt>Language Design</dt>
+        <dd>
+          <ul>
+            <li><a href="ignore/index.html">Ignore What You Don’t Need to Enforce</a></li>
+            <li><a href="markup-as-text/index.html">Markup as Text</a></li>
+            <li><a href="text-attributes/index.html">Human-Readable Text in Attributes</a></li>
+            <li><a href="errors/index.html">Error Handling</a></li>
+            <li><a href="microparsing/index.html">Excessive Microparsing</a></li>
+            <li><a href="data-star/index.html">Using <code>data-*</code> Attributes</a></li>
+            <li><a href="class/index.html">Using <code>class</code> Attributes</a></li>
+            <li><a href="no-versioning/index.html">No Versioning Strategy</a></li>
+          </ul>
+        </dd>
+        <dt>Wishful Thinking and Doe-Eyed Beliefs</dt>
+        <dd>
+          <ul>
+            <li><a href="naive/index.html">Naïve Versioning</a></li>
+            <li><a href="validation/index.html">Validation Will Save Us</a></li>
+            <li><a href="tools/index.html">Tools Will Save Us</a></li>
+          </ul>
+        </dd>
+        <dt>It’s for Humans</dt>
+        <dd>
+          <ul>
+            <li><a href="unreadable/index.html">Unreadable Names</a></li>
+            <li><a href="data-model/index.html">Don’t Dump Your Data Model</a></li>
+            <li><a href="naming-context/index.html">Naming Without Context</a></li>
+            <li><a href="consistency/index.html">Inconsistency</a></li>
+            <li><a href="default/index.html">Default Values</a></li>
+          </ul>
+        </dd>
+        <dt>RDFa/Microdata Problems</dt>
+        <dd>
+          <ul>
+            <li><a href="memorise/index.html">Hard to Memorise URLs</a></li>
+            <li><a href="reinventing/index.html">Reinventing the Wheel</a></li>
+            <li><a href="too-many/index.html">Too Many Vocabularies</a></li>
+          </ul>
+        </dd>
+      </dl>
+      <!--
+        . usage of data-* (it's about coupling)
+        . usage of class (it's the entry point for style)
+        . ignore all that you don’t reasonably need to constrain (see ignoring namespaces)
+        . tools will save us: be aware of the likely usage of your vernacular, take hand-authoring into account
+        . Namespace issues: map them onto picking URLs for your RDFa/Microdata vocabularies
+        . Rename lacunae to default
+        . vernaculars don’t have to be mutually exclusive. you could use html-version with scholarly
+        . file GH issues!
+      -->
     </section>
-    <section id='where'>
+    <section id="where">
       <h2>Where can I find some Vernacular HTML?</h2>
       <p>
-
+        Vernacular HTML is a practice that existed long before it was given a name — as well it
+        should be! Here is a short list of some examples (with varying qualities of documentation).
+        If you wish to expand it, please simply
+        <a href="https://github.com/scienceai/vernacular.io/">file a pull request</a>.
       </p>
+      <dl>
+        <dt><a href="https://www.ampproject.org/">AMP</a></dt>
+        <dd>
+          AMP (Accelerated Mobile Pages) is a project that defines a subset of HTML (with a number
+          of extensions) that enables increased performance in HTML delivery by getting rid of many
+          of the causes of slowness.
+        </dd>
+        <dt><a href="http://www.w3.org/2005/07/pubrules?uimode=filter&amp;uri=">W3C Publication
+            Rules (“pubrules”)</a></dt>
+        <dd>
+          Web standards are relatively formal affairs, and as such have their own formalised HTML
+          vernacular in which they are expressed. It is a fairly old vernacular (created circa 1997)
+          which, in terms of best practices, can sometimes show. It has nevertheless become
+          instantly recognisable in the Web technology world, and certainly benefits from great
+          simplicity (as can be seen in its
+          <a href="http://www.w3.org/StyleSheets/TR/W3C-WD.css">style sheet</a>).
+        </dd>
+        <dt><a href="https://www.w3.org/respec/">ReSpec</a> and
+            <a href="https://github.com/tabatkins/bikeshed#documentation-sections">Bikeshed</a></dt>
+        <dd>
+          Since W3C “pubrules” markup can prove repetitive and at times hard to get right, many
+          tools have been developed to assist people in producing it — these are the two main ones.
+          ReSpec documents are essentially valid HTML with some extra configuration that a JS
+          library turns into the real thing; Bikeshed is a Python preprocessor that can apply to
+          HTML but is more often used in Markdown mode (and therefore not completely a candidate for
+          this list).
+        </dd>
+        <dt><a href="https://angularjs.org/">AngularJS</a></dt>
+        <dd>
+          The AngularJS project sports a wealth of addition to HTML (which can take the form of new
+          elements, new attributes, <code>data-ng-*</code> attributes, and a few other options) to
+          add interactivity to HTML.
+        </dd>
+        <dt><a href="http://scholarly.vernacular.io/">Scholarly HTML</a></dt>
+        <dd>
+          Scholarly HTML is a set of constraints on HTML meant to enable the interchange of
+          scientific articles. (Disclaimer: it is done by the same people who are doing this.)
+        </dd>
+        <dt><a href="https://github.com/substack/html-version-spec">html-version-spec</a></dt>
+        <dd>
+          The purpose of html-version, from the ineffable
+          <a href="http://substack.net/">substack</a>, is “to make the Web more distributed,
+          permanent, and robust against outages, censorship, and orphaned content”. It does so
+          through specific application of <code>link</code> and <code>meta</code> values.
+        </dd>
+      </dl>
     </section>
-    <section id='huh'>
+    <section id="huh">
       <h2>Other FAQ</h2>
       <p>
 
@@ -92,13 +234,21 @@
         - how strictly must standards be interpreted
         XXX
         - favicon
-        Examples
-        - ReSpec
-        - W3C specs
-        - Scholarly
-        - AMP
-        - versioned HTML
+        - footer, supported by science.ai League of JStice
       -->
     </section>
+    <footer>
+      <p>
+        <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>
+        <a href="https://twitter.com/sciencedotai">@sciencedotai</a>
+        •
+        Contributors:
+        <a href="https://twitter.com/robinberjon">@robinberjon</a>
+        •
+        Brought to you by the
+        <img src="sciencedotai.svg" alt="science.ai logo" height="20px">
+        League of JStice
+      </p>
+    </footer>
   </body>
 </html>

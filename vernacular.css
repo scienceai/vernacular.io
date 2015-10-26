@@ -43,14 +43,15 @@
   box-sizing: border-box;
 }
 body {
-  background: #eee5de;
+  background: #faf7f5;
+  padding-bottom: 50px;
 }
 header {
   /*background: #40673f;*/
   background: #49B2AC;
   border-top: 10px solid #cc4500;
 }
-header h1 {
+header h1, header p.title {
   color: #fffdfa;
   text-align: center;
   font-size: 64px;
@@ -75,7 +76,19 @@ header p.subtitle {
   text-indent: 300px;
   margin-top: -20px;
 }
-h1, h2, h3, h4, h5, h6, p.subtitle {
+.subpage header h1, .subpage header p.title {
+  padding-top: 16px
+}
+.subpage header p.subtitle {
+  padding-bottom: 32px;
+}
+.subpage nav {
+  margin-bottom: 16px;
+}
+.subpage nav a {
+  text-align: right;
+}
+h1, p.title, h2, h3, h4, h5, h6, p.subtitle {
   font-family: Futura, Helvetica, sans-serif;
   font-stretch: condensed;
   font-style: italic;
@@ -119,7 +132,7 @@ nav a:hover {
   text-shadow: 1px 1px 0px #cc4500;
 }
 
-section {
+body > section, body > article {
   padding: 0 10px;
   margin: 0 auto 120px auto;
   max-width: 900px;
@@ -131,10 +144,64 @@ section h2 {
 section:target h2 {
   color: #cc4500;
 }
-section p {
+article h1 {
+  color: #cc4500;
+  text-shadow: 1px 1px 0px #fff;
+}
+section, article {
   font-family: Merriweather, serif;
   line-height: 1.6;
 }
 dfn {
   font-weight: bold;
+}
+a {
+  color: #cc4500;
+}
+code {
+  color: darkorange;
+  background: white;
+}
+dt {
+  font-weight: bold;
+}
+dt a {
+  text-decoration: none;
+}
+dd {
+  margin: 0 0 30px 16px;
+}
+footer {
+  font-family: Futura;
+  font-stretch: condensed;
+  font-size: 20px;
+  background: #cc4500;
+  border-top: 2px solid #852d00;
+  border-bottom: 1px solid #852d00;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+footer p {
+  max-width: 900px;
+  padding: 14px 10px 31px 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+footer a {
+  color: white;
+}
+footer img {
+  vertical-align: -4px;
+  background: white;
+  border-radius: 3px;
+  padding: 1px;
+  box-sizing: content-box;
+}
+p.back {
+  text-align: right;
+}
+p.back a {
+  text-decoration: none;
 }
