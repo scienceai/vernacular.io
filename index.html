@@ -25,26 +25,45 @@
       <h2>What is Vernacular HTML?</h2>
       <p>
         HTML is one of the most widespread and interoperable data formats available. It is extremely
-        versatile and flexible, and everyone has a way of seeing. Combined with JavaScript, CSS,
-        SVG, and the rest of the Web platform, it can be used as a very powerful format for pretty
-        much everything.
+        versatile and flexible, and if you have access to a computer, you have a access to a browser
+        with which to run it. Combined with JavaScript, CSS, SVG, and the rest of the Web platform,
+        it can be used as a very powerful format for all aspects of digital publishing.
       </p>
       <p>
-        These are highly desirable properties for domain-specific data formats, but out of the box
-        they come at a cost. The domain‘s applications will want to consume data that is somewhat
-        more predictable than fully general HTML, and to do so interoperably.
+        This generality comes at a cost, however. When your goal is the interchange of specialised
+        information within a given domain, the full generality of HTML can get in the way. Your
+        applications should not have to sift through some vague information soup in order to extract
+        the data that they require, and equally they need an obvious way of encoding their data in
+        such a way that other applications will reliably understand it.
       </p>
       <p>
-        <dfn id='vernacular-html'>Vernacular HTML</dfn> is the practice of building domain-specific
-        languages on top of HTML, fully compatible with it, for the purpose of addressing the needs
-        of a specific domain in an interoperable manner. It is not a technology so much as a body of
-        good practices.
+        That is the traditional purview of domain-specific data formats. These are often relatively
+        simple (at least compared to the fullness of HTML) data formats, typically encoded in XML or
+        JSON, with predictable rules that (one hopes) enable the interoperable interchange of
+        information.
       </p>
+      <p>
+        Domain-specific data formats are, however, not a panacea. They require conversion to an
+        output format (usually HTML, sometimes PDF) in order to be consumed, which is often a lossy
+        operation. This can make it harder to users to interact with them; it also means that
+        round-tripping them to and from user-friendly formats is an error-prone process. Not being
+        directly published on the Web, their content tends to be less discoverable.
+      </p>
+      <p>
+        “<dfn id='vernacular-html'>Vernacular HTML</dfn>” is the growing practice of creating
+        domain-specific data formats using the HTML platform. Its goal is to enable interoperable,
+        specialised data interchange while retaining as much of HTML's full power as is sensible
+        for the given domain. It is not a technology so much as a body of good practices.
+      </p>
+      <!--
+        - example with recipes
+      -->
     </section>
     <section id='why'>
       <h2>Why bother talking about Vernacular HTML?</h2>
       <p>
-        having common references, best practices
+        having common references, best practices, codigying the space, some things are specific to
+        this process
       </p>
     </section>
     <section id='how'>
@@ -64,6 +83,22 @@
       <p>
 
       </p>
+      <!--
+        Details
+        - GitHub
+        - suggest a new best practice
+        - validation
+        - do I need to validate
+        - how strictly must standards be interpreted
+        XXX
+        - favicon
+        Examples
+        - ReSpec
+        - W3C specs
+        - Scholarly
+        - AMP
+        - versioned HTML
+      -->
     </section>
   </body>
 </html>
