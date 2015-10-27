@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <p class='title'>Vernacular</p>
+      <p class="title">Vernacular</p>
       <p class="subtitle">
         HTML Made Special
       </p>
@@ -19,7 +19,57 @@
     </nav>
     <article>
       <h1>Excessive Microparsing</h1>
-
+      <p>
+        Microparsing is a term covering the use of an extra non-HTML syntax inside of HTML, usually
+        in attribute values. It has been the subject of heated debate in the earlier days of the
+        markup community. The idea here is not to flag microparsing as always bad since in fact
+        there are numerous cases in which it is a good idea. Rather, there should be a rule of thumb
+        separating the good uses of it from those in which it is simply hiding away structure that
+        should be in the tree.
+      </p>
+      <p>
+        Microparsing is generally good when it is designed with the author in mind. For instance,
+        CSS Selectors are much better as they are than if one had to turn <code>section:target >
+        .foo[href^="#"]</code> into a tree of elements and attributes. This is essentially the same
+        argument that goes in favour of supporting a regular expression language within a larger
+        language rather than having to express the same concept with a long series of method calls.
+      </p>
+      <p>
+        There are however cases in which microparsing does not help the author much. For instance, here
+        is an extract from an SVG path:
+      </p>
+      <pre>M363.73 85.73 C359.27 86.29 355.23 86.73 354.23 81.23 C353.23 75.73 355.73 73.73 363.23 75.73
+C370.73 77.73 375.73 84.23 363.73 85.73 zM327.23 89.23 C327.23 89.23 308.51 93.65 325.73 80.73
+C333.73 74.73 334.23 79.73 334.73 82.73 C335.48 87.2 327.23 89.23 327.23 89.23 zM384.23 48.73
+C375.88 47.06 376.23 42.23 385.23 40.23 C386.7 39.91 389.23 49.73 384.23 48.73 zM389.23 48.73
+C391.73 48.23 395.73 49.23 396.23 52.73 C396.73 56.23 392.73 58.23 390.23 56.23
+C387.73 54.23 386.73 49.23 389.23 48.73 zM383.23 59.73 C385.73 58.73 393.23 60.23 392.73 63.23
+C392.23 66.23 386.23 66.73 383.73 65.23 C381.23 63.73 380.73 60.73 383.23 59.73 zM384.23 77.23
+C387.23 74.73 390.73 77.23 391.73 78.73 C392.73 80.23 387.73 82.23 386.23 82.73
+C384.73 83.23 381.23 79.73 384.23 77.23 zM395.73 40.23 C395.73 40.23 399.73 40.23 398.73 41.73
+C397.73 43.23 394.73 43.23 394.73 43.23 zM401.73 49.23 C401.73 49.23 405.73 49.23 404.73 50.73
+C403.73 52.23 400.73 52.23 400.73 52.23 zM369.23 97.23 C369.23 97.23 374.23 99.23 373.23 100.73
+C372.23 102.23 370.73 104.73 367.23 101.23 C363.73 97.73 369.23 97.23 369.23 97.23 zM355.73 116.73
+C358.73 114.23 362.23 116.73 363.23 118.23 C364.23 119.73 359.23 121.73 357.73 122.23
+…</pre>
+      <p>
+        Some people, including yours truly, can read and even write the above. But they should be
+        discarded as bad guinea pigs. The reason for using such a syntax for paths in SVG was
+        two-fold (and is the same reason used in other similar situations): file size, and DOM size
+        (whereby if an element had been used for each path command, the DOM would have been
+        supposedly much larger). Where file size is concerned, the structure of such path data is so
+        repetitive that a good compression algorithm (such as gzip, or <a
+        href="http://www.w3.org/TR/exi/">EXI</a>) will produce similar compressed sizes whether the
+        microsyntax or elements are used — and since SVG path data is usually big, one wants to use
+        compression anyway. And where the DOM size is concerned, one has to keep in mind that it is
+        merely an API. A generic DOM will be larger, but the DOM inside an SVG implementation should
+        be able to have a very similar footprint to the one based on the microsyntax since whether
+        path data is in an attribute or in elements should have little effect on internal storage.
+      </p>
+      <p>
+        So the rule of thumb in this situation is that microparsing is for authors, not for
+        implementations.
+      </p>
       <p class="back">
         <a href="../index.html#how">↖︎ Back to list</a>
       </p>

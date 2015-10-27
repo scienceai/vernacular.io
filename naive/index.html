@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <p class='title'>Vernacular</p>
+      <p class="title">Vernacular</p>
       <p class="subtitle">
         HTML Made Special
       </p>
@@ -19,7 +19,66 @@
     </nav>
     <article>
       <h1>Naïve Versioning</h1>
-
+      <p>
+        Versioning, as <a href="../no-versioning/index.html">explained previously</a>, is important
+        enough that it deserves to be done right. Yet some languages have taken a rather naïve
+        approach to it typically consisting in a <code>version</code> or
+        <code>data-foo-version</code> attribute on the root element or other such simplistic schemes
+        built on the presence of a version indicator. That is fine if the purpose is to die
+        immediately when a given version is not supported (which is a bit rude and only really
+        justified in extreme cases), but will not produce any useful effect if the intent is to
+        allow processors to work across versions.
+      </p>
+      <p>
+        Indeed, what is such a processor to do if it sees a version attribute with a value greater
+        than the version it supports? Nothing useful comes to mind, short of warning the user that
+        there may be rendering issues, a message which will be either ignored by the user or
+        panic-inducing, but will not yield any useful result. Conversely, if the version attribute
+        points to an earlier version, should features from later versions that nevertheless appear
+        in the content be ignored? Should older bugs be emulated? That would make implementations
+        unduly complex.
+      </p>
+      <p>
+        When producing content, it is easily admitted that using the smallest possible version that
+        includes all of the needed functionality is a good practice as it will enable the largest
+        usage by older implementations. But doing so properly requires authors to know for a given
+        list of language constructs which is the lowest version number that comprises them all. That
+        is asking a lot, and in practice authors will likely fall back in such situations to using
+        the highest version number that they can get away with. Either way, version information will
+        often be out of synch (either through error, or bit rot, or organic growth, or because the
+        content is composed from multiple sources) with the actual content. This tendency is strong
+        enough that relying on version metadata is largely useless, unless applied to content that
+        is exclusively produced under tight control by programmatic means — a situation that is
+        exceedingly rare for web formats.
+      </p>
+      <p>
+        But even without considerations that include hard to demonstrate behaviour from putative
+        users, the following very short decision tree can be followed when looking at whether a
+        version indicator would be useful:
+      </p>
+      <p>
+        <em>Are processors expected to process content across version boundaries?</em>
+      </p>
+      <dl>
+        <dt>No.</dt>
+        <dd>
+          Then each version is actually a different language (i.e. they are not <em>mutually
+          intelligible</em>). Just change the language completely. You don‘t need a version
+          indicator.
+        </dd>
+        <dt>Yes.</dt>
+        <dd>
+          The processors will have to be defined so that they can apply <a
+          href="../default/index.html">default values</a>, <a href="errors/index.html">error
+          handling</a>, and other similar rules intended to render unknown constructs sufficiently
+          intelligible. There is nothing which a version indicator could add on top of what they
+          already do. You don‘t need a version indicator.
+        </dd>
+      </dl>
+      <p>
+        As simple as it seems, a zombie of this debate will almost always arise. Kill it early, kill
+        it often.
+      </p>
       <p class="back">
         <a href="../index.html#how">↖︎ Back to list</a>
       </p>

@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <p class='title'>Vernacular</p>
+      <p class="title">Vernacular</p>
       <p class="subtitle">
         HTML Made Special
       </p>
@@ -19,7 +19,35 @@
     </nav>
     <article>
       <h1>Validation Will Save Us</h1>
-
+      <p>
+        The short of this is that your validator is not your processor. Relying on validation in
+        order to ensure that processing of your vernacular is interoperable is likely to create
+        issues because the two uses of the language are different, and meant for different
+        situations. For instance, in many cases a validator will yield an error in order to flag an
+        input as problematic, whereas the processor might instead apply a default behaviour for
+        input it does not understand.
+      </p>
+      <p>
+        Validation tools, often in the form of schemata (also known as schemas for the
+        pedantry-challenged), seem for some people to belong to an almost mythical dimension. Not
+        only do many appear to believe that you need a schema to “define a language” (whatever that
+        means), but even those bereft of that error altogether too often expect a schema to be step
+        in — cape and superpowers flapping in the wind — to fix parts of language design that they
+        wish not to think about.
+      </p>
+      <p>
+        This is not to say that validators are not useful — notably for debugging or in order to
+        test that you are producing content in the manner that you expect — but unless your
+        processing happens to be carried out in the exact same manner as your validation they are
+        not the magic sauce that will make your vernacular interoperable.
+      </p>
+      <p>
+        A schema can be useful for documentation purposes. But unless you have a very strict
+        workflow it will be essentially useless at producing interoperability, and it certainly
+        won‘t help your design (especially if you have to change your language to fit one validation
+        tool‘s idiosyncratic limitations). To paraphrase the adage: a user had a problem and decided
+        to address it using validation; now she has two problems.
+      </p>
       <p class="back">
         <a href="../index.html#how">↖︎ Back to list</a>
       </p>

@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <p class='title'>Vernacular</p>
+      <p class="title">Vernacular</p>
       <p class="subtitle">
         HTML Made Special
       </p>
@@ -19,7 +19,60 @@
     </nav>
     <article>
       <h1>Error Handling</h1>
-
+      <p>
+        In some cases <a href="../default/index.html">default values</a> and <a
+        href="../ignore/index.html">ignoring what you don‘t understand</a> will not be enough to
+        recover from errors, for instance because your processor is receiving an element that it
+        absolutely did not expect at a location where it wanted specific content.
+      </p>
+      <p>
+        This is a case in which if the rules for processing such errors are not defined,
+        implementations are guaranteed to differ. There are multiple approaches here: flag an error
+        and give up, ignore the element and process what is inside it as if it hadn’t been there at
+        all (or process some of it), or ignore the entire subtree contained inside that element.
+        This is in effect a practice very similar to ignoring what you don‘t understand, but applied
+        “inside” the content as it were instead of around it. The way in which it is implemented
+        tends to be slightly different, but the spirit is the same: being robust in the face of
+        variation, enabling users to go wild with their content while keeping it processable, and
+        ensuring interoperability.
+      </p>
+      <p>
+        Deciding which rule to specify can be difficult. In order for a system to be extensible and
+        amenable to versioning, one needs to design it so that it ignores at least some unknowns.
+        But consider a system in which there is an element that is meant to effect a payment, and
+        another one, added later or by a third party, that is expected to cause a service to be
+        rendered. If the payment were effected but the service request ignored with no error being
+        flagged, the processing model is clearly broken. Conversely, if the same message sported an
+        element the intention of which was merely to provide some statistics about purchases, it
+        would be a shame to balk on a perfectly fine transaction for such a triviality.
+      </p>
+      <p>
+        In a rare concession to elegance, SOAP provides this level of granularity with a
+        <code>mustUnderstand</code> attribute that is used to tell such cases apart. It is unlikely
+        that you can reuse something similar in a vernacular, unless you are using an HTML
+        vernacular as the messaging format for RPC, which I would politely rate as an odd choice.
+      </p>
+      <p>
+        HTML itself grew to use a system in which unknown elements are ignored but their content is
+        processed. This provides for very useful fallback strategies, but did lead to some bumps in
+        the road when <code>script</code> and <code>style</code> were introduced as it caused their
+        content to be displayed in user agents that didn’t understand them.
+      </p>
+      <p>
+        In practice your choice will likely be different in different cases. For instance, an
+        element describing a person will likely not care if the sub-element providing the person‘s
+        name is at any given depth beneath it — that information is only a simple
+        <code>querySelector()</code> away. But a section might care that its heading appear as its
+        first child in order to more easily differentiate it from the headings of its subsections
+        in case one fails to be provided. Erroneous content around or before the heading would cause
+        it to be ignored (which is likely better than picking the wrong one).
+      </p>
+      <p>
+        Whichever rules you chose are up to you to decide, but if you plan to design a language you
+        <em>have</em> to chose some rules lest interoperability dragons bite your head off, followed
+        closely by hordes of angry users and developers who were stuck reverse-engineering error
+        handling behaviours while their friends were having beer.
+      </p>
       <p class="back">
         <a href="../index.html#how">↖︎ Back to list</a>
       </p>

@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <p class='title'>Vernacular</p>
+      <p class="title">Vernacular</p>
       <p class="subtitle">
         HTML Made Special
       </p>
@@ -19,7 +19,40 @@
     </nav>
     <article>
       <h1>No Versioning Strategy</h1>
-
+      <p>
+        Versioning languages is <em>hard</em>, and there are many ways of getting it wrong. There is
+        not room enough here to go into a full discussion of versioning, but suffice it to say that
+        not thinking about it in version 1 will be the cause of many headaches in version 2. And
+        there always is a version 2. Or even just a 1.1. Or 1.0.1. Change happens.
+      </p>
+      <p>
+        It is, of course, difficult to predict the many directions in which a vernacular may evolve,
+        and there are cases in which a given evolution of a language will require changes so radical
+        that making it compatible with older content will be a bad idea. It is not those cases that
+        one needs to worry about as they will be easy enough to address by creating something
+        entirely new (a great occasion to fix all of the bad naming decisions you made initially).
+        What language designers need to focus on is the next dot release.
+      </p>
+      <p>
+        When a language is being created it often starts with a big brainstorm of all the features
+        that it could support, which are then trimmed down to the smallest number of features that
+        will make it useful (the latter phase being, maybe, too often overlooked). A good exercise
+        to try out to see if a language one is designing is ready for evolution is to start with a
+        typical v1 document, and then start adding made up markup corresponding to what it would
+        look like if it made use of all the features that were pushed off for version 2. The
+        question then is: will that document still be processed exactly the same way as the
+        unadorned document in a version 1 processor? If not, and if the intent is not for processors
+        to catch fire unless everything is understood, then you have effectively painted the
+        language into a corner.
+      </p>
+      <p>
+        If the intent is that x.n+1 should roughly work with a little loss in x.n implementations,
+        you will need a versioning strategy. It‘s your language, with its own specificities, therefore
+        no one can define this strategy for you. Two good places to start are looking at
+        <a href="default/index.html">default values</a> and
+        <a href="error-handling/index.html">error handling</a>. If you get those right, and remain
+        aware of the risks, you should mostly be in good shape.
+      </p>
       <p class="back">
         <a href="../index.html#how">↖︎ Back to list</a>
       </p>
