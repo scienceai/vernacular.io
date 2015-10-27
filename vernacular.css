@@ -174,7 +174,7 @@ dd {
 footer {
   font-family: Futura;
   font-stretch: condensed;
-  font-size: 20px;
+  font-size: 16px;
   background: #cc4500;
   border-top: 2px solid #852d00;
   border-bottom: 1px solid #852d00;
@@ -185,7 +185,7 @@ footer {
 }
 footer p {
   max-width: 900px;
-  padding: 14px 10px 31px 10px;
+  padding: 14px 10px;
   margin: 0 auto;
   text-align: center;
 }
