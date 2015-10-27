@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <p class='title'>Vernacular</p>
+      <p class="title">Vernacular</p>
       <p class="subtitle">
         HTML Made Special
       </p>
@@ -19,7 +19,21 @@
     </nav>
     <article>
       <h1>Using <code>class</code> Attributes</h1>
-
+      <p>
+        The <code>class</code> attribute is a bona fide extension point in HTML, and as such a
+        candidate for vernacular specification. In fact, it is an approach that has been used in
+        <a href="http://microformats.org/">Microformats</a> as well as in how
+        <a href="https://en.wikipedia.org/wiki/Publishing_Requirements_for_Industry_Standard_Metadata">PRISM</a>
+        has been translated to HTML.
+      </p>
+      <p>
+        One advantage is that this approach ties directly into the CSS system. It should be noted
+        however that today’s browsers are able to match on arbitrary elements and attributes, which
+        makes this less appealing. Since <code>class</code> is the integration point with CSS, using
+        it for semantic purposes also means that you may conflict with the preferred CSS practices
+        of some of your users. A CSS class is essentially a big global variable; if you start having
+        too many code can become harder to manage.
+      </p>
       <p class="back">
         <a href="../index.html#how">↖︎ Back to list</a>
       </p>

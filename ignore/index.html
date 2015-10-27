@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>XXX | Vernacular</title>
+    <title>Ignore What You Don’t Need to Enforce | Vernacular</title>
     <link rel="stylesheet" href="../vernacular.css">
   </head>
   <body>
     <header>
-      <p class='title'>Vernacular</p>
+      <p class="title">Vernacular</p>
       <p class="subtitle">
         HTML Made Special
       </p>
@@ -18,8 +18,38 @@
       </ul>
     </nav>
     <article>
-      <h1>XXX</h1>
-
+      <h1>Ignore What You Don’t Need to Enforce</h1>
+      <p>
+        In most domain-specific data formats, the default expectation is that a processor will
+        process the entirety of the content and understand how to meaningfully operate on all of
+        it. For HTML vernaculars, this expectation is less useful.
+      </p>
+      <p>
+        If you are defining a vernacular that concerns itself with ancillary parts of a document,
+        that much should be obvious. For instance, a vernacular describing how to capture EXIF
+        metadata inside of a <code>figure</code> element would not be all that useful if it forbade
+        all manners of content outside of that given <code>figure</code>. You expect it to be
+        embedded.
+      </p>
+      <p>
+        But this consideration holds even for vernaculars intended to capture the primary
+        content of a given page. For example, the
+        <a href="http://scholarly.vernacular.io/">Scholarly HTML</a> vernacular intends to describe
+        the entirety of a scientific article, which will typically be most of the content in a
+        given page. Nevertheless, it clearly states that it concerns itself solely with the content
+        of the first <code>article</code> element found in the document, and deliberately ignores
+        the rest. This allows people to produce content that can be usefully interpreted as
+        Scholarly HTML while fully retaining the ability to surround that content with all manners
+        of other markup such as navigation, header and footer, and whatever markup needs to be
+        wrapped around the article for stylistic purposes.
+      </p>
+      <p>
+        In addition to making vernaculars more useful (since they give authors a lot of leeway in
+        organising their HTML around their content) it also makes them composable. There is no
+        reason to stick to using just the one vernacular. For instance, one could easily use
+        Scholarly HTML together with
+        <a href="https://github.com/substack/html-version-spec">html-version-spec</a>.
+      </p>
       <p class="back">
         <a href="../index.html#how">↖︎ Back to list</a>
       </p>

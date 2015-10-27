@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <p class='title'>Vernacular</p>
+      <p class="title">Vernacular</p>
       <p class="subtitle">
         HTML Made Special
       </p>
@@ -19,7 +19,46 @@
     </nav>
     <article>
       <h1>Human-Readable Text in Attributes</h1>
-
+      <p>
+        It is often tempting to place text intended for humans inside an attribute, perhaps so
+        as to "attach" it more directly to the element, or to make authoring terser. The
+        archetypical example of this being:
+      </p>
+      <pre>&lt;img ... alt="photo of a dahut in the fog"></pre>
+      <p>
+        The issue here is that this approach breaks down as soon as one starts
+        requiring structure inside the string. If you include a picture of a <code>section</code>
+        element, you won’t be able to mark the <code>alt</code> up with the proper <code>code</code>
+        element.
+      </p>
+      <p>
+        That might seem like an acceptable limitation, but it gets worse: if the text is expected to
+        be potentially in any language, there will be cases in which it will require structure. For
+        instance, some Chinese or Japanese text requires ruby annotations (basically text that is
+        rendered next to the primary text to indicate the pronunciation). Similarly, it can be
+        useful to specify the writing direction when mixing languages that go in different
+        directions (e.g. Arabic and French). Also, due to limitations in Unicode, some characters
+        will not render correctly (i.e. will be rendered with the wrong glyphs) unless you specify
+        which language the text is in — that is notably the case of the CJK set in which Unicode
+        gave some Chinese, Japanese, and Korean text the same code-point even though they are
+        depicted differently in each language (a rather scandalous decision, but one we have to live
+        with). For this case one could place a <code>lang</code> attribute on the element to get the
+        right effect on the text inside the attribute, but that would set the language of the entire
+        element, not just of the title text. It’s an extreme case, but if one had an
+        <code>img</code> element pointing to an image of a wine label from France, with an
+        <code>alt</code> attribute in Korean, and set the <code>lang</code> to <code>kr</code> so
+        that the <code>alt</code> renders right, then the language of the label would be said to be
+        Korean too.
+      </p>
+      <p>
+        Given the technicalities involved in getting I18N right, and given the greater extensibility
+        of the element approach, it should be inferred that text intended for human consumption
+        should only occur in element content. That being said, the original argument — terseness —
+        has some merit for authors. In the case in which it is desired, it is therefore possible to
+        define a two-tiered approach in which text can occur in either an attribute or a child
+        (with the child taking precedence). But that will complicate processing code; apply with
+        caution.
+      </p>
       <p class="back">
         <a href="../index.html#how">↖︎ Back to list</a>
       </p>

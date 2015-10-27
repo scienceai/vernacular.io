@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <p class='title'>Vernacular</p>
+      <p class="title">Vernacular</p>
       <p class="subtitle">
         HTML Made Special
       </p>
@@ -19,7 +19,37 @@
     </nav>
     <article>
       <h1>Using <code>data-*</code> Attributes</h1>
-
+      <p>
+        On the topic of <code>data-*</code> attributes, the HTML specification states clearly that:
+        “These attributes are not intended for use by software that is independent of the site that
+        uses the attributes.” Put differently, that means that they are intended as hooks for your
+        own site to make use of, typically through included scripts, and not to convey broader
+        semantics that might be interpreted by third parties.
+      </p>
+      <p>
+        People often interpret that as a big no-no, and admit to having used them in their
+        vernacular with a notable tinge of shame. In practice, things are a little bit fuzzier. Note
+        that this is not a normative part of HTML, it is open to interpretation.
+      </p>
+      <p>
+        If you are building a vernacular intended to become a relatively formal standard shared by
+        a large community, that is definitely sound advice. For starters, why bother with the
+        <code>data-</code> prefix in this case when you could have shorter, nicer attribute names?
+      </p>
+      <p>
+        At the other end of the spectrum if you are creating a simple language that can be used with
+        a JS library people might include in their sites, you’re definitely safe: go ahead and use
+        <code>data-*</code> as much as you please.
+      </p>
+      <p>
+        In between those two extremes things are a little greyer. Clearly, if there is another
+        attribute you could use, you should not use a <code>data-*</code> attribute — but then
+        that applies in all cases. A good rule of thumb is that if what is contained in that
+        attribute may possibly be used by a processor that is <em>not</em> specifically designed to
+        consume your vernacular (say, a general-purpose processor such as a search engine crawler or
+        an accessibility tool) then you do not want to be using <code>data-*</code>. Otherwise,
+        you’re probably okay.
+      </p>
       <p class="back">
         <a href="../index.html#how">↖︎ Back to list</a>
       </p>
