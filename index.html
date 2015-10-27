@@ -153,14 +153,6 @@
           </ul>
         </dd>
       </dl>
-      <!--
-        . usage of data-* (it's about coupling)
-        . usage of class (it's the entry point for style)
-        . ignore all that you don’t reasonably need to constrain (see ignoring namespaces)
-        . tools will save us: be aware of the likely usage of your vernacular, take hand-authoring into account
-        . vernaculars don’t have to be mutually exclusive. you could use html-version with scholarly
-        . file GH issues!
-      -->
     </section>
     <section id="where">
       <h2>Where can I find some Vernacular HTML?</h2>
@@ -218,21 +210,53 @@
       </dl>
     </section>
     <section id="huh">
-      <h2>Other FAQ</h2>
-      <p>
-
-      </p>
-      <!--
-        Details
-        - GitHub
-        - suggest a new best practice
-        - validation
-        - do I need to validate
-        - how strictly must standards be interpreted
-        XXX
-        - favicon
-        - footer, supported by science.ai League of JStice
-      -->
+      <h2>Any Other Question?</h2>
+      <dl>
+        <dt>This is great! How do I contribute or point out a bug?</dt>
+        <dd>
+          It’s all on <a href="https://github.com/scienceai/vernacular.io/">GitHub</a>. Feel free to
+          make a pull request or to <a href="https://github.com/scienceai/vernacular.io/issues">file
+          an issue</a>! We are completely open to new advice, or to discussing the validity of some
+          of the practices described here.
+        </dd>
+        <dt>Do I need to produce a validator for my vernacular?</dt>
+        <dd>
+          As always, it depends on the usage context. In general it should not be considered a
+          high-priority requirement — describing clear processing rules through which content can
+          be reliably and robustly extracted from your vernacular is far more important. However, in
+          a complex production chain, especially one involving multiple parties, validation can be a
+          life saver. There are no special rules for HTML vernaculars: the same common sense that
+          applies to other data formats is just as valid here.
+        </dd>
+        <dt>How do I create a validator if I need one?</dt>
+        <dd>
+          One approach can be to produce a modified version of the
+          <a href="https://validator.nu/">VNU</a> validator, but it is not a lightweight undertaking
+          and it involves Java. We are considering working on a validation framework architected
+          in a manner similar to <a href="https://github.com/w3c/specberus">Specberus</a>, to make
+          it easier for people to write their own validation tooling with. Let us know if that’s
+          something you’re interested in!
+        </dd>
+        <dt>You sometimes seem to interpret standards in a flexible manner, is that not bad?</dt>
+        <dd>
+          No. Standard texts have several levels of conformance. When dealing with normative rules
+          (the “MUST” ones) it is generally a really good idea not to fool around. Breaking those
+          leads to interoperability problems, and either you or your users will get bitten for that.
+          If, however, we are considering advice from specifications (the “SHOULD” bits) then there
+          is room for context. The idea is that you ought to understand the why behind the statement
+          and not take it as a strict mandate. Once you understand the reasoning, you should have a
+          fairly good idea of when to stick to it and when to break it. Unfortunately, this type of
+          informative recommendation is often just stated, almost as a command, with no explanation
+          as to the problems it is expected to protect you from. That’s when a little bit of
+          creative thinking might be necessary.
+        </dd>
+        <dt>I have another question, where do I ask it?</dt>
+        <dd>
+          You can <a href="https://github.com/scienceai/vernacular.io/issues">file an issue</a>, or
+          you can ping <a href="https://twitter.com/sciencedotai">@sciencedotai</a> or
+          <a href="https://twitter.com/robinberjon">@robinberjon</a> on Twitter.
+        </dd>
+      </dl>
     </section>
     <footer>
       <p>
