@@ -43,38 +43,41 @@
   box-sizing: border-box;
 }
 body {
-  background: #faf7f5;
+  background: #eee;
   padding-bottom: 50px;
 }
 header {
   /*background: #40673f;*/
-  background: #49B2AC;
-  border-top: 10px solid #cc4500;
+  background: #434343;
+  border-top: 10px solid #fff;
 }
 header h1, header p.title {
   color: #fffdfa;
   text-align: center;
-  font-size: 64px;
+  font-size: 32px;
   padding-top: 60px;
-  text-shadow: 3px 3px 0px #142013;
+  /*text-shadow: 3px 3px 0px #bc4300;*/
+  text-transform: uppercase;
+  border-bottom: 2px solid #FFF;
   margin: 0;
-  border-top: 2px solid #852d00;
+  border-top: 1px solid #bc4300;
 }
 header p.subtitle {
   /*color: #7FCC7D;*/
   /*color: #f73;*/
   /*color: #eee5de;*/
-  color: yellow;
+  color: #fff;
   text-align: center;
-  font-size: 26px;
+  font-size: 18px;
   padding-bottom: 120px;
   font-weight: normal;
-  text-shadow: 2px 2px 0px #142013;
+  /*text-shadow: 2px 2px 0px #142013;*/
   letter-spacing: 2px;
   margin: 0;
   /*font-style: normal;*/
-  text-indent: 300px;
-  margin-top: -20px;
+  /*text-indent: 300px;*/
+  /*margin-top: -20px;*/
+  text-transform: uppercase;
 }
 .subpage header h1, .subpage header p.title {
   padding-top: 16px
@@ -88,18 +91,21 @@ header p.subtitle {
 .subpage nav a {
   text-align: right;
 }
-h1, p.title, h2, h3, h4, h5, h6, p.subtitle {
-  font-family: Futura, Helvetica, sans-serif;
-  font-stretch: condensed;
-  font-style: italic;
-  font-weight: 800;
+h1, p.title, p.subtitle, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans", sans-serif;
+  /*font-stretch: condensed;*/
+  /*font-style: italic;*/
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  /*text-transform: uppercase;*/
+  text-align: center;
   text-transform: uppercase;
 }
 nav {
-  background: #cc4500;
-  border-top: 2px solid #852d00;
-  border-bottom: 1px solid #852d00;
-  margin-bottom: 120px;
+  background: #fff;
+  border-top: 1px solid #bc4300;
+  border-bottom: 1px solid #bc4300;
+  margin-bottom: 60px;
 }
 nav ul {
   list-style-type: none;
@@ -114,22 +120,23 @@ nav li {
   flex: 1;
 }
 nav a {
-  font-family: Futura, Helvetica, sans-serif;
-  font-stretch: condensed;
-  font-weight: 800;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  /*font-stretch: condensed;*/
+  font-weight: 300;
   text-transform: uppercase;
-  color: #fffdfa;
-  text-shadow: 1px 1px 0px #7a5f52;
+  color: #bc4300;
+  /*text-shadow: 1px 1px 0px #7a5f52;*/
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 2px;
   display: block;
   padding: 10px 0;
   text-align: center;
 }
 nav a:hover {
-  background: #852d00;
-  text-shadow: 1px 1px 0px #cc4500;
+  background: #434343;
+  color: #fff;
+  /*text-shadow: 1px 1px 0px #cc4500;*/
 }
 
 body > section, body > article {
@@ -138,8 +145,8 @@ body > section, body > article {
   max-width: 900px;
 }
 section h2 {
-  color: #852d00;
-  text-shadow: 1px 1px 0px #fff;
+  color: #bc4300;
+  /*text-shadow: 1px 1px 0px #fff;*/
 }
 section:target h2 {
   color: #cc4500;
@@ -172,12 +179,13 @@ dd {
   margin: 0 0 30px 16px;
 }
 footer {
-  font-family: Futura;
-  font-stretch: condensed;
+  font-family: "Open Sans";
+  /*font-stretch: condensed;*/
+  font-weight: 300;
   font-size: 16px;
-  background: #cc4500;
-  border-top: 2px solid #852d00;
-  border-bottom: 1px solid #852d00;
+  background: #434343;
+  border-top: 1px solid #bc4300;
+  /*border-bottom: 1px solid #852d00;*/
   position: fixed;
   bottom: 0;
   width: 100%;
