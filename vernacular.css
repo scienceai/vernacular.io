@@ -57,7 +57,6 @@
        url('fonts/Open-Sans-600italic/Open-Sans-600italic.svg#OpenSans') format('svg');
 }
 
-
 * {
   box-sizing: border-box;
 }
@@ -197,13 +196,21 @@ code {
   padding: 0.1em;
 }
 dt {
-  font-weight: bold;
+  font-weight: 600;
 }
 dt a {
   text-decoration: none;
 }
 dd {
   margin: 0 0 30px 16px;
+}
+strong {
+  font-weight: 600;
+}
+aside.note {
+  font-style: italic;
+  background: #eee;
+  padding: 8px 0;
 }
 /*
 - light -
