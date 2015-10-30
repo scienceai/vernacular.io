@@ -1,44 +1,6 @@
 
 @import url('node_modules/normalize.css/normalize.css');
 
-/* Fonts: Merriweather */
-@font-face {
-    font-family: "Merriweather";
-    src: url("fonts/merriweather-light-webfont.eot");
-    src: url("fonts/merriweather-light-webfont.eot?#iefix") format("embedded-opentype"),
-         url("fonts/merriweather-light-webfont.woff") format("woff"),
-         url("fonts/merriweather-light-webfont.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Merriweather";
-    src: url("fonts/merriweather-bold-webfont.eot");
-    src: url("fonts/merriweather-bold-webfont.eot?#iefix") format("embedded-opentype"),
-         url("fonts/merriweather-bold-webfont.woff") format("woff"),
-         url("fonts/merriweather-bold-webfont.ttf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Merriweather";
-    src: url("fonts/merriweather-bolditalic-webfont.eot");
-    src: url("fonts/merriweather-bolditalic-webfont.eot?#iefix") format("embedded-opentype"),
-         url("fonts/merriweather-bolditalic-webfont.woff") format("woff"),
-         url("fonts/merriweather-bolditalic-webfont.ttf") format("truetype");
-    font-weight: bold;
-    font-style: italic;
-}
-@font-face {
-    font-family: "Merriweather";
-    src: url("fonts/merriweather-lightitalic-webfont.eot");
-    src: url("fonts/merriweather-lightitalic-webfont.eot?#iefix") format("embedded-opentype"),
-         url("fonts/merriweather-lightitalic-webfont.woff") format("woff"),
-         url("fonts/merriweather-lightitalic-webfont.ttf") format("truetype");
-    font-weight: normal;
-    font-style: italic;
-}
-
 @font-face {
   font-family: 'Open Sans';
   font-weight: 300;
@@ -53,6 +15,49 @@
        url('fonts/Open-Sans-300/Open-Sans-300.svg#OpenSans') format('svg');
 }
 
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-style: normal;
+  src: url('fonts/Open-Sans-600/Open-Sans-600.eot');
+  src: url('fonts/Open-Sans-600/Open-Sans-600.eot?#iefix') format('embedded-opentype'),
+       local('Open Sans Semibold'),
+       local('Open-Sans-600'),
+       url('fonts/Open-Sans-600/Open-Sans-600.woff2') format('woff2'),
+       url('fonts/Open-Sans-600/Open-Sans-600.woff') format('woff'),
+       url('fonts/Open-Sans-600/Open-Sans-600.ttf') format('truetype'),
+       url('fonts/Open-Sans-600/Open-Sans-600.svg#OpenSans') format('svg');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-style: italic;
+  src: url('fonts/Open-Sans-300italic/Open-Sans-300italic.eot');
+  src: url('fonts/Open-Sans-300italic/Open-Sans-300italic.eot?#iefix') format('embedded-opentype'),
+       local('Open Sans Light Italic'),
+       local('Open-Sans-300italic'),
+       url('fonts/Open-Sans-300italic/Open-Sans-300italic.woff2') format('woff2'),
+       url('fonts/Open-Sans-300italic/Open-Sans-300italic.woff') format('woff'),
+       url('fonts/Open-Sans-300italic/Open-Sans-300italic.ttf') format('truetype'),
+       url('fonts/Open-Sans-300italic/Open-Sans-300italic.svg#OpenSans') format('svg');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-style: italic;
+  src: url('fonts/Open-Sans-600italic/Open-Sans-600italic.eot');
+  src: url('fonts/Open-Sans-600italic/Open-Sans-600italic.eot?#iefix') format('embedded-opentype'),
+       local('Open Sans Semibold Italic'),
+       local('Open-Sans-600italic'),
+       url('fonts/Open-Sans-600italic/Open-Sans-600italic.woff2') format('woff2'),
+       url('fonts/Open-Sans-600italic/Open-Sans-600italic.woff') format('woff'),
+       url('fonts/Open-Sans-600italic/Open-Sans-600italic.ttf') format('truetype'),
+       url('fonts/Open-Sans-600italic/Open-Sans-600italic.svg#OpenSans') format('svg');
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -60,6 +65,8 @@ body {
   background: #fff;
   padding-bottom: 50px;
   color: #434343;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
 }
 /*
   - strong -
@@ -108,7 +115,6 @@ header p.subtitle {
   text-align: right;
 }
 h1, p.title, p.subtitle, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   letter-spacing: 0.2em;
   text-align: center;
@@ -163,6 +169,7 @@ section h2 {
   color: #fff;
   background: #434343;
   margin-top: 0;
+  margin-bottom: 40px;
 }
 section:target h2 {
   background: #f32121;
@@ -174,7 +181,6 @@ article h1 {
   color: #f32121;
 }
 section, article {
-  font-family: Merriweather, serif;
   line-height: 1.6;
 }
 dfn {
