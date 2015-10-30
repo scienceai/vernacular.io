@@ -253,3 +253,64 @@ p.back {
 p.back a {
   text-decoration: none;
 }
+
+@media screen and (max-width: 399px) {
+  header h1, header p.title {
+    letter-spacing: 0.2em;
+  }
+  footer {
+    font-size: 10px;
+  }
+  nav ul {
+    display: block;
+  }
+  nav a {
+    font-size: 14px;
+    text-align: left;
+    padding: 5px 0;
+  }
+  section h2 {
+    font-size: 18px;
+  }
+}
+
+@media print {
+  header {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  header h1, header p.title {
+    color: #434343;
+    border: none;
+  }
+  header p.subtitle {
+    color: #434343;
+  }
+  nav {
+    box-shadow: none;
+  }
+  code {
+    color: #000;
+  }
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+  }
+  section:target h2 {
+    background: #434343;
+  }
+  footer {
+    background: #fff;
+    border: none;
+    color: #434343;
+    box-shadow: none;
+    border-top: 1px solid #434343;
+    position: relative;
+  }
+  footer a:link, footer a:visited, a:link, a:visited {
+    color: inherit;
+  }
+  body {
+    padding-bottom: 0;
+  }
+}
